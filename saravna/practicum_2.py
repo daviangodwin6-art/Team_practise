@@ -1,0 +1,1 @@
+print("practicum_2")
