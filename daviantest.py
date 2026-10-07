@@ -1,1 +1,3 @@
-print("Hello World")
+"iphone"
+"samsung"
+"redmi"
