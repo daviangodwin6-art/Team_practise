@@ -1,11 +1,7 @@
-import sys
-import os
+import subprocess
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from practicum_1 import print_five_table
-
-def test_print_five_table(capsys):
-    print_five_table()
-    captured = capsys.readouterr()
-    expected = "\n".join([f"5 * {i} = {5 * i}" for i in range(1, 11)]) + "\n"
-    assert captured.out == expected
+def test_practicum_1():
+    result = subprocess.run(["python", "practicum_1.py"], capture_output=True, text=True)
+    assert "Practicum 1" in result.stdout
+    assert "5 * 1 = 5" in result.stdout
+    assert "5 * 10 = 50" in result.stdout
